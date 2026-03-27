@@ -6,10 +6,70 @@
     <title>Document</title>
 </head>
 <style>
-    
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    body,html{
+        background-color: black;
+        color: white;
+    }
+    .fixed{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .left{
+        color: black;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+    }
+    .SignUp{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .links{
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        padding-top: 20px;
+    }
+    .right{
+        background-color: rgb(62, 98, 255);
+    }
 </style>
 <body>
-    <div class="left"></div>
-    <div class="rigt"></div>
+    <div class="fixed">
+    <div class="left">
+        <div class="SignUp">
+            <div class="links">
+                <a href="#">F</a><a href="#">G</a><a href="#">in</a>
+            </div>
+            <div class="formSIGN">
+                <form  method="post">
+                <label for="uname">User-Name:</label>
+                <input type="text">
+                <label for="fname">Full-Name:</label>
+                <input type="text">
+                <label for="email">Email:</label>
+                <input type="email">
+                <label for="pwd">Set-Password:</label>
+                <input type="password">
+                <label for="conpwd">Confirm-Password:</label>
+                <input type="password">
+                <button type="submit">Sumbit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="LogIn"></div>
+    </div>
+    </div>
 </body>
 </html>
