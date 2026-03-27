@@ -1,0 +1,36 @@
+*{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    body,html{
+        background-color: black;
+        color: white;
+    }
+    .fixed{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .left{
+        color: black;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+    }
+    .SignUp{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .links{
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        padding-top: 20px;
+    }
+    .right{
+        background-color: rgb(62, 98, 255);
+    }
