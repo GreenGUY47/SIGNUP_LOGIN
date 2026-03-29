@@ -6,11 +6,12 @@ const LogIn = document.querySelector(".LogIn")
 const greet2 = document.querySelector(".greet2")
 const shap = document.querySelector(".shape")
 const btnChanger = document.querySelector(".btnChanger")
+const body = document.body;
 btnChanger.addEventListener("click",function(){
     if(btnChanger.innerHTML === "LOGIN"){
     signup.style.display = "none"
     LogIn.style.display = "block"
-    Greet1.style.display = "flex"
+    Greet1.style.display = "block"
     greet2.style.display = "none"
     links.style.display = "none"
     shap.style.display = "none"
