@@ -5,6 +5,7 @@ const Greet1 = document.querySelector(".Greet1")
 const LogIn = document.querySelector(".LogIn")
 const greet2 = document.querySelector(".greet2")
 const shap = document.querySelector(".shape")
+const shap2 = document.querySelector(".shape2")
 const btnChanger = document.querySelector(".btnChanger")
 const body = document.body;
 btnChanger.addEventListener("click",function(){
@@ -15,6 +16,7 @@ btnChanger.addEventListener("click",function(){
     greet2.style.display = "none"
     links.style.display = "none"
     shap.style.display = "none"
+    shap2.style.display = "block"
     btnChanger.innerHTML = "SIGNUP"
     }else{
     signup.style.display = "grid"
@@ -23,6 +25,7 @@ btnChanger.addEventListener("click",function(){
     greet2.style.display = "block"
     links.style.display = "flex"
     shap.style.display = "block"
+    shap2.style.display = "none"
     btnChanger.innerHTML = "LOGIN"
     }
 })

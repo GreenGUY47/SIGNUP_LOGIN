@@ -72,9 +72,10 @@
         border-radius: 20px 20px 0px;
         padding: 20px;
         width: 250px;
-        height: 350px;
+        height: 360px;
         box-shadow:  2px 2px 10px rgba(57, 62, 70, 0.4);
         z-index: 2;
+        
     }
     .formSIGNRight{
         position: relative;
@@ -195,7 +196,7 @@
         font-weight: 600;
         border-radius: 10px;
         transition: all 0.25s ease-in-out;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0);
     }
     .links2 a img{
         border: none;
@@ -298,6 +299,17 @@
         border: none;
         border-radius: 0px 0px 20px 20px;
     }
+    .shape2{ 
+        display: none;  
+        position: absolute;
+        width: 500px;
+        height: 700px;
+        background-color: #F77F00;
+        z-index: 1;
+        border: none;
+        border-radius: 0px 0px 20px 20px;
+        left: 7.5%;
+    }
     .greet2 img{
         position: absolute;
         width: 900px;
@@ -341,4 +353,13 @@
     }
     .btnChanger:active{
         transform: scale(1);
+    }
+    .Greet1 img{
+        position: absolute;
+        width: 900px;
+        top: 160px;
+        right: 0px;
+        left: -200px;
+        z-index: 1;
+        transform: rotateY(180deg);
     }
