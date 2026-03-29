@@ -7,6 +7,15 @@ const greet2 = document.querySelector(".greet2")
 const shap = document.querySelector(".shape")
 const shap2 = document.querySelector(".shape2")
 const btnChanger = document.querySelector(".btnChanger")
+const uname = document.querySelector("#uname")
+const fname = document.querySelector("#fname")
+const email = document.querySelector("#email")
+const pwd = document.querySelector("#pwd")
+const errorMsg = document.querySelector(".errorMsg")
+const conpwd = document.querySelector("#conpwd")
+const btnleft = document.querySelector(".btn")
+const form = document.querySelector("form")
+const inputs = document.querySelector("form input")
 const body = document.body;
 btnChanger.addEventListener("click",function(){
     if(btnChanger.innerHTML === "LOGIN"){
@@ -29,3 +38,10 @@ btnChanger.addEventListener("click",function(){
     btnChanger.innerHTML = "LOGIN"
     }
 })
+form.addEventListener("submit",function(event){
+    event.preventDefault();
+    inputs.foreach(input => {
+
+    })
+})
+
