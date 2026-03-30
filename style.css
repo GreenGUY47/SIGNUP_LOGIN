@@ -370,6 +370,9 @@
         height: 100vh;
         z-index: 5;
     }
+    .errorMsg{
+        display: none;
+    }
     .message{
         position: absolute;
         width: 350px;

@@ -11,11 +11,13 @@ const uname = document.querySelector("#uname")
 const fname = document.querySelector("#fname")
 const email = document.querySelector("#email")
 const pwd = document.querySelector("#pwd")
-const errorMsg = document.querySelector(".errorMsg")
+const errorMsgs = document.querySelectorAll(".errorMsg")
 const conpwd = document.querySelector("#conpwd")
 const btnleft = document.querySelector(".btn")
 const form = document.querySelector("form")
 const inputs = document.querySelector("form input")
+const errorBase = document.querySelector(".base")
+const error = document.querySelector(".message")
 const body = document.body;
 btnChanger.addEventListener("click",function(){
     if(btnChanger.innerHTML === "LOGIN"){
@@ -38,10 +40,42 @@ btnChanger.addEventListener("click",function(){
     btnChanger.innerHTML = "LOGIN"
     }
 })
-form.addEventListener("submit",function(event){
-    event.preventDefault();
-    inputs.foreach(input => {
+btnleft.addEventListener("click", function(event) {
+  event.preventDefault(); // move this to the top
 
-    })
-})
+    const uname  = document.querySelector("#uname").value.trim();
+    const fname  = document.querySelector("#fname").value.trim();
+    const email  = document.querySelector("#email").value.trim();
+    const pwd    = document.querySelector("#pwd").value.trim();
+    const conpwd = document.querySelector("#conpwd").value.trim();
 
+errorMsgs.forEach(span => span.style.display = "none");
+
+if (!uname)            { errorMsgs[0].style.display = "block"; return; }
+if (!fname)            { errorMsgs[1].style.display = "block"; return; }
+if (!email)            { errorMsgs[2].style.display = "block"; return; }
+if (!pwd)              { errorMsgs[3].style.display = "block"; return; }
+if (!conpwd)           { errorMsgs[4].style.display = "block"; return; }
+if (pwd !== conpwd)    { errorMsgs[5].style.display = "block"; return; }
+
+    async function postUserData(data) {
+        try{
+            const response = await fetch("url",{
+                method: "POST",
+                header:{
+                    "Content-Type": "application/json"
+                },
+                body:JSON.stringify(data)
+            })
+            const result = await response.json()
+            if(response.ok){
+                window.location.href = "Greet.html"
+            }else{
+                errorBase.style.display = "block"
+                message
+            }
+        }
+        catch(error) {
+
+    }
+});
