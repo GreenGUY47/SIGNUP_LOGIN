@@ -6,6 +6,8 @@ const LogIn = document.querySelector(".LogIn")
 const greet2 = document.querySelector(".greet2")
 const shap = document.querySelector(".shape")
 const shap2 = document.querySelector(".shape2")
+const headingP = document.querySelector(".loginPageGreet2")
+const headingH = document.querySelector(".loginPageGreet1")
 const btnChanger = document.querySelector(".btnChanger")
 const uname = document.querySelector("#uname")
 const fname = document.querySelector("#fname")
@@ -19,6 +21,7 @@ const inputs = document.querySelector("form input")
 const errorBase = document.querySelector(".base")
 const errorBtn = document.querySelector("#errorbtn")
 const error = document.querySelector(".message")
+const imgRight = document.querySelector(".imgBgGreet")
 const body = document.body;
 btnChanger.addEventListener("click",function(){
     if(btnChanger.innerHTML === "LOGIN"){
@@ -30,6 +33,7 @@ btnChanger.addEventListener("click",function(){
     shap.style.display = "none"
     shap2.style.display = "block"
     btnChanger.innerHTML = "SIGNUP"
+    playFormAnimation();
     }else{
     signup.style.display = "grid"
     LogIn.style.display = "none"
@@ -98,3 +102,106 @@ errorBtn.addEventListener("click",function(){
         errorBase.style.display = "block"
     }
 })
+gsap.from(".shape",{
+    y:-800,
+    delay:0.6,
+    opacity:0,
+    duration:1.6,
+    ease: "bounce.out",
+})
+gsap.from(".imgBgGreet",{
+    scale:0,
+    delay:1,
+    opacity:0,
+    duration:0.7
+})
+gsap.from(".loginPageGreet1",{
+    x:500,
+    delay:1,
+    duration:3,
+    opacity:0
+})
+gsap.from(".loginPageGreet2",{
+    x:500,
+    delay:2,
+    duration:3,
+    opacity:0
+})
+gsap.from(".formSIGN",{
+    delay:2,
+    opacity:0,
+    scale:0,
+    duration:1,
+})
+gsap.from(".grid1 label,.grid1 input", {
+    opacity: 0,
+    x: 50,
+    delay:2.7,
+    duration: 0.5,
+    stagger: 0.15
+});
+gsap.fromTo(".grid1 button",
+{
+    opacity: 0,
+    y: 30
+},
+{
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+    delay: 4
+});
+
+let start = 1; 
+
+document.querySelector(".btnChanger").addEventListener("click", () => {
+    
+    if(start === 1){ 
+        gsap.from(".shape2",{
+    y:-800,
+    delay:0.6,
+    opacity:0,
+    duration:1.6,
+    ease: "bounce.out",
+})
+gsap.from(".imgleft",{
+    scale:0,
+    delay:1,
+    opacity:0,
+    duration:0.7
+})
+gsap.from(".loginPageGreet3",{
+    x:-500,
+    delay:1,
+    duration:3,
+    opacity:0
+})
+gsap.from(".loginPageGreet4",{
+    x:-500,
+    delay:2,
+    duration:3,
+    opacity:0
+})
+        gsap.from(".grid2 label, .grid2 input", {
+            opacity: 0,
+            x: 50,
+            duration: 0.5,
+            stagger: 0.15
+        });
+
+        gsap.fromTo(".grid2 button", 
+        {
+            opacity: 0,
+            y: 30
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.5
+        });
+
+        start = 2; 
+    }
+
+    playFormAnimation();
+});

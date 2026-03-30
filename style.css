@@ -111,6 +111,26 @@
         inset 2px 2px 5px rgba(0, 0, 0, 0.4),
         inset -2px -2px 5px rgba(255,255,255,0.7);
     }
+    .grid2{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        height: 40vh;
+        gap: 5px;
+        
+    }
+    .grid2 input{
+        outline: none;
+        padding-left: 10px;
+        height: 25px;
+        width: 100%;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 
+        inset 2px 2px 5px rgba(0, 0, 0, 0.4),
+        inset -2px -2px 5px rgba(255,255,255,0.7);
+    }
 .btn{
     
     display: block;
