@@ -17,6 +17,7 @@ const btnleft = document.querySelector(".btn")
 const form = document.querySelector("form")
 const inputs = document.querySelector("form input")
 const errorBase = document.querySelector(".base")
+const errorBtn = document.querySelector("#errorbtn")
 const error = document.querySelector(".message")
 const body = document.body;
 btnChanger.addEventListener("click",function(){
@@ -54,28 +55,46 @@ errorMsgs.forEach(span => span.style.display = "none");
 if (!uname)            { errorMsgs[0].style.display = "block"; return; }
 if (!fname)            { errorMsgs[1].style.display = "block"; return; }
 if (!email)            { errorMsgs[2].style.display = "block"; return; }
+if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errorMsgs[2].textContent = "Please enter a valid email address.";
+    errorMsgs[2].style.display = "block";
+    return;
+}
 if (!pwd)              { errorMsgs[3].style.display = "block"; return; }
 if (!conpwd)           { errorMsgs[4].style.display = "block"; return; }
 if (pwd !== conpwd)    { errorMsgs[5].style.display = "block"; return; }
+postUserData({ uname, fname, email, pwd });
+window.location.href = "Greet.html";
+async function postUserData(data) {
+    try {
+        const response = await fetch("url", {
+            method: "POST",
+            headers: {                          // Fix 1: 'header' → 'headers'
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-    async function postUserData(data) {
-        try{
-            const response = await fetch("url",{
-                method: "POST",
-                header:{
-                    "Content-Type": "application/json"
-                },
-                body:JSON.stringify(data)
-            })
-            const result = await response.json()
-            if(response.ok){
-                window.location.href = "Greet.html"
-            }else{
-                errorBase.style.display = "block"
-                message
-            }
+        const result = await response.json();
+
+        if (response.ok) {
+            window.location.href = "Greet.html";
+        } else {
+            errorBase.style.display = "block";
+            console.error(result.message);      
         }
-        catch(error) {
-
     }
-});
+    catch (error) {
+        errorBase.style.display = "block";
+        errorBase.style.    
+        console.error(error);                
+    }
+}   
+});                                        
+errorBtn.addEventListener("click",function(){
+    if(errorBase.style.display = "block"){
+        errorBase.style.display = "none"
+    }else{
+        errorBase.style.display = "block"
+    }
+})

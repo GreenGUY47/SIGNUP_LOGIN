@@ -377,7 +377,7 @@
         position: absolute;
         width: 350px;
         height: 120px;
-        background-color: #1A1A1A;
+        background-color: #4a89ff;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -387,4 +387,22 @@
         z-index: 5;
         border: none;
         border-radius: 20px;
+    }
+    .message h2{
+        color: rgb(255, 255, 255);
+    }
+    .message button{
+        width: 80px;
+        height: 25px;
+        background-color: crimson;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        transition: all 0.25s ease;
+    }
+    .message button:hover{
+        transform: scale(1.1);
+    }
+    .message button:active{
+        transform: scale(1);
     }
